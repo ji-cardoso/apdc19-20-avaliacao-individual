@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<img src='../img/animalcrossing.jpg'
+	style='position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;'>
+
+<head>
+<style>
+.button {
+	background-color: #89CFF0;
+	border: rounded;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input[type=text] {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 0 0.25em;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	outline: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text]:focus {
+	background-color: #89CFF0;
+}
+
+.header {
+	padding: 40px;
+	text-align: center;
+	color: brown;
+	font-size: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script/jquery.jsonify-0.3.1.min.js"></script>
+	<script type="text/javascript" src="script/update.js"></script>
+	
+	<div align="center">
+
+		<h1 class="header" align="center">APDC Crossing</h1>
+		<form name="update-form" id="update-form" accept-charset="utf-8">
+			
+			
+			<p>
+				<label class="titles" for="user_pwd"><b>Password</b> </label>
+			<p>
+				<input type="password" minlength="3"
+					style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;"
+					placeholder="Enter Password" name="user_pwd">
+			<p>
+				<input type="password" minlength="3"
+					style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;"
+					placeholder="Confirm Password" name="confirmation">
+			<p>
+				<label class="titles" for="user_email"><b>E-mail</b> </label>
+			<p>
+				<input type="email"  style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;" 
+				placeholder="Enter Valid E-mail" name="user_email">
+			<p>
+				<label class="titles" for="user_phone_number"><b>Phone Number</b> </label>
+			<p>
+				<input type="number" maxlength="9" style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;" 
+			 	placeholder="Enter Valid Phone Number XXXXXXXX" name="user_phone_number">
+			<p>
+				<label class="titles" for="user_address_street"><b>Street</b> </label>
+			<p>
+				<input type="text" placeholder="Enter Street Name" name="user_address_street">
+			<p>
+				<label class="titles" for="user_address_place"><b>Place</b> </label>
+			<p>
+				<input type="text" placeholder="Enter Place" name="user_address_place">
+			<p>
+				<label class="titles" for="user_address_cp"><b>Postal Code</b> </label>
+			<p>
+				<input type="text" required pattern="[0-9]{4}[\-]?[0-9]{3}" placeholder="Enter Postal Code XXXX-XXX" name="user_address_cp">
+			<p>
+				<label class="titles" for="user_address_country"><b>Country</b> </label>
+			<p>
+				<input type="text" placeholder="Enter Country" name="user_address_country">
+			<p>
+				<button class="button" type="submit" value="update">Update</button>
+				<button class="button" onclick="cancelFunction()">Back</button>
+			</p>
+		</form>
+
+		<script>
+			function cancelFunction() {
+				window.history.back();
+			}
+		</script>
+		
+	</div>
+</body>
+</html>

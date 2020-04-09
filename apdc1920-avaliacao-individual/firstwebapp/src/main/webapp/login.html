@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<img src='../img/animalcrossing.jpg'
+	style='position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;'>
+
+<head>
+<style>
+.button {
+	background-color: #89CFF0;
+	border: rounded;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.header {
+	padding: 40px;
+	text-align: center;
+	color: brown;
+	font-size: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text] {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 0 0.25em;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	outline: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text]:focus {
+	background-color: #89CFF0;
+}
+
+.titles {
+	font-size: 13px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	display: block;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script/jquery.jsonify-0.3.1.min.js"></script>
+	<script type="text/javascript" src="script/login.js"></script>
+
+	<h1 class="header" align="center">Login</h1>
+	<div align="center">
+		<form name="login" id="login"
+			action="https://mimetic-surf-271517.appspot.com/rest/login/v1"
+			method="post" accept-charset="utf-8">
+			<p>
+				<label class="titles" for="user"><b>Username</b> </label>
+			<p>
+				<input style="align: center" type="text"
+					placeholder="Enter Username" name="user" required>
+			<p>
+				<label class="titles" for="user_pwd"><b>Password</b> </label>
+			<p>
+			<input type="password"
+					style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;"
+					placeholder="Enter Password" name="user_pwd" required>
+			</p>
+
+			<button class="button" type="submit" value="Login">Login</button>
+			<button class="button" onclick="cancelFunction()">Back</button>
+		</form>
+
+		<script>
+			function cancelFunction() {
+				location.replace("/index.html");
+			}
+		</script>
+	</div>
+</body>
+</html>

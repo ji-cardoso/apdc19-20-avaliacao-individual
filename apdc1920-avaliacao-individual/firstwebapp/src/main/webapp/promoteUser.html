@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<img src='../img/animalcrossing.jpg'
+	style='position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;'>
+
+<head>
+<style>
+.button {
+	background-color: #89CFF0;
+	border: rounded;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.header {
+	padding: 40px;
+	text-align: center;
+	color: brown;
+	font-size: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text] {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 0 0.25em;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	outline: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text]:focus {
+	background-color: #89CFF0;
+}
+
+</style>
+</head>
+<body>
+	<script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script/jquery.jsonify-0.3.1.min.js"></script>
+	<script type="text/javascript" src="script/promoteUser.js"></script>
+	
+	<div align="center">
+
+		<h1 class="header" align="center">Welcome User  </h1>
+
+
+		<form name="promoteUser" id="promoteUser" accept-charset="utf-8">
+			<p>
+				<label class="titles" for="user_to_promote"><b>Username</b> </label>
+			<p>
+				<input style="align: center" type="text" class="input"
+					placeholder="Enter Username" name="user_to_promote" required>
+
+			<button class="button" type="submit">Promote User to GBO</button>
+			<p>
+		</form>			
+		<button class="button" onclick="location.replace('SU.html')">Back to Index Page</button>
+			
+	</div>
+</body>
+</html>

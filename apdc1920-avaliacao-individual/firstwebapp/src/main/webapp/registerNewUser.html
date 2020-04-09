@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<img src='../img/animalcrossing.jpg'
+	style='position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;'>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<head>
+<style>
+.button {
+	background-color: #89CFF0;
+	border: rounded;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.header {
+	padding: 40px;
+	text-align: center;
+	color: brown;
+	font-size: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text] {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 0 0.25em;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	outline: none;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text]:focus {
+	background-color: #89CFF0;
+}
+
+.titles {
+	font-size: 13px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	display: block;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script/jquery.jsonify-0.3.1.min.js"></script>
+	<script type="text/javascript" src="script/registerNewUser.js"></script>
+
+	<h1 class="header" align="center">Register</h1>
+	<div class="content" align="center">
+
+		<form name="register-form" id="register-form" accept-charset="utf-8">
+			<p>
+
+				<label class="titles" for="user"><b>Username</b> </label>
+			<p>
+				<input type="text" placeholder="Enter Username" name="user" required>
+			<p>
+				<label class="titles" for="user_name"><b>Name</b> </label>
+			<p>
+				<input type="text" placeholder="Enter Name" name="user_name" required>
+			<p>
+				<label class="titles" for="user_pwd"><b>Password</b> </label>
+			<p>
+				<input type="password" minlength="3"
+					style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;"
+					placeholder="Enter Password" name="user_pwd" id="password" required>
+			<p>
+				<input type="password" minlength="3"
+					style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;"
+					placeholder="Confirm Password" name="confirmation" id="confirmation" required>
+			<p>
+				<input style="margin-bottom:10px" type="checkbox" id="show">Show Password
+			
+				<label class="titles" for="user_email"><b>E-mail</b> </label>
+			<p>
+				<input type="email" style="width: 20%; padding: 12px 20px; margin: 0 0.25em; box-sizing: border-box; border: 1px solid #555; outline: none; font-family: 'Trebuchet MS' ', Helvetica, sans-serif;"
+				placeholder="Enter Valid E-mail" name="user_email" required>
+			<p>
+				<label class="titles" for="typeOfAccount"><b>Type of Account:</b> </label>
+				<label>
+   				<input type="radio" value="GBO" name="new_user_role" />GBO</label>
+   				<label>
+    			<input type="radio" value="USER" name="new_user_role" />User</label>
+    		<p>
+				<button class="button" type="submit" value="register">Register</button>
+			</p>
+		</form>
+				<button class="button" onclick="cancelFunction()">Back</button>
+		
+	</div>
+
+
+
+	<script>
+	
+	document.getElementById("show").onclick = function() {viewPassword()};
+	var password = document.getElementById("password");
+    var confirmation = document.getElementById("confirmation");
+    password.onchange = ConfirmPassword;
+    confirmation.onkeyup = ConfirmPassword;
+
+	function cancelFunction() {
+		location.replace("/index.html");
+	}
+	
+	function viewPassword()
+	{
+		 var x = document.getElementById("password");
+		 var y = document.getElementById("confirmation");
+		  if (x.type === "password") {
+		    x.type = "text";
+		    y.type = "text";
+		  } else {
+		    x.type = "password";
+		    y.type = "password";
+		  }
+	}
+	
+
+     function ConfirmPassword()
+     {     
+		confirmation.setCustomValidity("");
+		if (password.value != confirmation.value) {
+			confirmation.setCustomValidity("Passwords do not match.");
+		}
+	}}
+	</script>
+
+</body>
+</html>

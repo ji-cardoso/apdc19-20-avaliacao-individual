@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<img src='../img/animalcrossing.jpg'
+	style='position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;'>
+
+<head>
+<style>
+.button {
+	background-color: #89CFF0;
+	border: rounded;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 10px 25px 0 rgba(0,0,0,0.19);
+}
+.header {
+  padding: 40px;
+  text-align: center;
+  color: brown;
+  font-size: 40px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+
+		<h1 class="header" align="center">APDC Crossing</h1>
+		<button class="button" onclick="loginFunction()">Login</button>
+
+		<p id="loginButton"></p>
+
+		<script>
+			function loginFunction() {
+				location.replace("login.html");
+			}
+		</script>
+
+		<button class="button" onclick="registerFunction()">Register</button>
+
+		<p id="registerButton"></p>
+
+		<script>
+			function registerFunction() {
+				location.replace("register.html");
+			}
+		</script>
+	</div>
+</body>
+</html>

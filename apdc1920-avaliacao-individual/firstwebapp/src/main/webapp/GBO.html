@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<img src='../img/animalcrossing.jpg'
+	style='position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;'>
+
+<head>
+<style>
+.button {
+	background-color: #89CFF0;
+	border: rounded;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.header {
+	padding: 40px;
+	text-align: center;
+	color: brown;
+	font-size: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+	
+	<div align="center">
+
+		<h1 class="header" align="center">Welcome User <script> localStorage.getItem("username");</script> </h1>
+
+
+		<p>
+			<button class="button" id="updateinfobutton" onclick="location.replace('update.html')">Update/Edit Information</button>
+		<p>
+			<button class="button" id="removeotherbutton" onclick="location.replace('removeOther.html')">Remove Other Account</button>
+		<p>
+			<a href="#" class="button" id="logoutbutton">Logout</a>
+		<p>
+
+		<script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="script/jquery.jsonify-0.3.1.min.js"></script>
+		<script>
+			document.getElementById("logoutbutton").onclick = function() {captureDataLogout(event)};
+
+			captureDataLogout = function(event) {
+				var input = {};
+				input.user_token = localStorage.getItem('user_token');
+				input.user = localStorage.getItem('user');
+				var text = JSON.stringify(input)
+				var data =  JSON.parse(text);
+				console.log(data);
+				$.ajax({
+					type: "DELETE",
+					url: "https://mimetic-surf-271517.appspot.com/rest/logout/v1",
+					contentType: "application/json; charset=utf-8",
+					crossDomain: true,
+					success: function(response) {
+						location.replace("index.html");
+					},
+					error: function(response) {
+						alert("Error: "+ response.status);
+					},
+					data: JSON.stringify(data)
+				});
+
+				event.preventDefault();
+			};
+
+			
+		</script>
+	</div>
+</body>
+</html>
