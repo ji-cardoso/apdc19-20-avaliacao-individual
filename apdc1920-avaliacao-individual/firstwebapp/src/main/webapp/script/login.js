@@ -17,7 +17,6 @@ captureData = function(event) {
 					location.replace("/SU.html");
 				if (response.user_role == "GBO")
 					location.replace("/GBO.html");
-
 			}
 			else {
 				alert("No response");

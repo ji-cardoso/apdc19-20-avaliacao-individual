@@ -88,7 +88,7 @@ public class RemoveResource {
 		TransactionOptions options = TransactionOptions.Builder.withXG(true);
 		Transaction trans = datastore.beginTransaction(options);
 		
-		Key tokenKey = KeyFactory.createKey("user_token", data.user_token);
+		Key tokenKey = KeyFactory.createKey("token", data.user_token);
 
 		try
 		{

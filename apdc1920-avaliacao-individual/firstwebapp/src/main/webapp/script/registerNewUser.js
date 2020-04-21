@@ -11,7 +11,6 @@ captureData = function(event) {
         success: function(response) {
                 alert("User registered ");
                 window.location.href = "/SU.html";
-
         },
         error: function(response) {
         	if(response.status == 1){

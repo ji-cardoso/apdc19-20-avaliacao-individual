@@ -12,7 +12,12 @@ captureData = function(event) {
         crossDomain: true,
         success: function(response) {
                 alert("Saved modifications");
-                window.location.href = "/user.html";
+                localStorage.setItem('user_token', response.user_token);
+				localStorage.setItem('user', response.user);
+				if(response.user_role == "USER")
+					location.replace("/user.html");
+				if (response.user_role == "GBO")
+					location.replace("/GBO.html");
 
         },
         error: function(response) {

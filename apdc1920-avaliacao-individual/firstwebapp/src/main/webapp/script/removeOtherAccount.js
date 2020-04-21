@@ -11,7 +11,7 @@ captureData = function(event) {
 					crossDomain: true,
 					success: function(response) {
 						alert("You've successfully deleted an account");
-						window.history.back();
+		                window.location.href = "/GBO.html"
 					},
 					error: function(response) {
 						alert("Error: "+ response.status);
